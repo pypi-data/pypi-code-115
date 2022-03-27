@@ -1,0 +1,2 @@
+def lsz():
+    print("hello")
