@@ -1,0 +1,2 @@
+class NonZeroRetcode(Exception):
+    pass
