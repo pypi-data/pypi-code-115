@@ -1,0 +1,7 @@
+__title__ = "gitflic"
+__version__ = "1.0"
+__description__ = "GitflicApi wrapper"
+__author__ = "SantaSpeen"
+__author_email__ = "dir@sssr.dev"
+__url__ = "https://github.com/SantaSpeen/gitflic"
+__license__ = "MIT"
