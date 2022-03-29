@@ -1,0 +1,12 @@
+accessories = {}
+id_hardware_map = {}
+picos = []
+hardware_id_channels_map = {}
+id_channels_map = {}
+id_stats_map = {}
+accessory_id_data_transformer_map = {}
+calibration = {}
+hub = None
+loader = None
+driver = None
+openhub_api_ip = None
