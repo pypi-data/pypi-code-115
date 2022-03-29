@@ -1,0 +1,36 @@
+from alive_progress import alive_bar
+from multiprocessing import Pool as ProcessPool
+from multiprocessing.dummy import Pool as ThreadPool
+from typing import Callable, Collection, Optional
+
+from gevent.pool import Pool as GeventPool
+
+from ringo_scanner.concurrency_mode import ConcurrencyMode
+
+
+class Scanner:
+    def __init__(self, proc: Callable, items: Collection, outfile: str, max_workers: Optional[int] = None,
+                 mode: ConcurrencyMode = ConcurrencyMode.GEVENT):
+        self.proc = proc
+        self.items = items
+        self.outfile = outfile
+        self.max_workers = max_workers or mode.value
+        self.mode = mode
+        self.bar = None
+
+    def process_item(self, item):
+        result = self.proc(item)
+        self.bar()
+        return result
+
+    def get_mapper(self) -> Callable:
+        return {ConcurrencyMode.NO: map,
+                ConcurrencyMode.GEVENT: GeventPool(self.max_workers).imap_unordered,
+                ConcurrencyMode.THREADING: ThreadPool(self.max_workers).imap_unordered,
+                ConcurrencyMode.PROCESSING: ProcessPool(self.max_workers).imap_unordered}[self.mode]
+
+    def execute(self):
+        with alive_bar(len(self.items)) as bar:
+            self.bar = bar
+            with open(self.outfile, 'w') as f:
+                f.writelines(self.get_mapper()(self.process_item, self.items))
