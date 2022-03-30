@@ -1,0 +1,9 @@
+
+import setuptools
+
+setuptools.setup(
+    name="smart-thelper",
+    version="1.0",
+    packages=setuptools.find_packages(),
+    install_requires=['torch', 'torchvision', 'matplotlib', 'cython', 'opencv-python', 'numpy<1.16.0,>=1.14.5', 'Pillow', 'pynput', 'scipy', 'scikit-learn', 'shapely', 'augmentor', 'albumentations', 'tensorboardX', 'gitpython', 'pip', 'six', 'tqdm'],
+)
