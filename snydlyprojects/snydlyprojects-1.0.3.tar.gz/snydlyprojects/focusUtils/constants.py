@@ -1,0 +1,2 @@
+SUDOPASS = 'dencatec'
+SSHPASS = 'aerialattack'
