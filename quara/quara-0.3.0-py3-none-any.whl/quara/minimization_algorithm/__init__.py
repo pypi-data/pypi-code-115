@@ -1,0 +1,1 @@
+"""Minimization algorithm module"""
