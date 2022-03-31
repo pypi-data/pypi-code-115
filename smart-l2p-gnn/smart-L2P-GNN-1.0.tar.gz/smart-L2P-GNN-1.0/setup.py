@@ -1,0 +1,9 @@
+
+import setuptools
+
+setuptools.setup(
+    name="smart-L2P-GNN",
+    version="1.0",
+    packages=setuptools.find_packages(),
+    install_requires=['numpy==1.16.0', 'scikit-learn==0.22.1', 'networkx==2.4', 'pandas==1.0.3', 'tqdm==4.46.0', 'torch==1.4.0'],
+)
