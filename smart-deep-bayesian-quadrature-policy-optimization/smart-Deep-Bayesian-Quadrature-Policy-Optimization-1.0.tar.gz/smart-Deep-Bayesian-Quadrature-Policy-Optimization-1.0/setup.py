@@ -1,0 +1,9 @@
+
+import setuptools
+
+setuptools.setup(
+    name="smart-Deep-Bayesian-Quadrature-Policy-Optimization",
+    version="1.0",
+    packages=setuptools.find_packages(),
+    install_requires=['numpy', 'torch>=1.1.0', 'gpytorch==0.3.5', 'tensorboardX==1.9', 'gym'],
+)
