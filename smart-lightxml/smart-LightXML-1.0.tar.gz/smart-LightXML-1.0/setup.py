@@ -1,0 +1,9 @@
+
+import setuptools
+
+setuptools.setup(
+    name="smart-LightXML",
+    version="1.0",
+    packages=setuptools.find_packages(),
+    install_requires=['tokenizers==0.7.0', 'numpy==1.18.5', 'pandas==1.0.4', 'tqdm==4.46.1', 'scipy==1.4.1', 'transformers==2.11.0', 'scikit_learn==0.23.2', 'torch==1.5.1'],
+)
