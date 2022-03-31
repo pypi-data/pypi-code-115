@@ -1,0 +1,9 @@
+
+import setuptools
+
+setuptools.setup(
+    name="smart-table-understanding-system",
+    version="1.0",
+    packages=setuptools.find_packages(),
+    install_requires=['numpy', 'pystruct', 'sklearn', 'pyyaml==3.12', 'pyexcel==0.5.7', 'pyexcel-io==0.5.6', 'pyexcel-xls==0.5.6', 'pyexcel-xlsx==0.5.6', 'xlrd==1.1.0', 'cvxopt==1.2.0', 'openpyxl==2.5.1', 'python-dateutil==2.7.5', 'argparse', 'pandas', 'pslpython'],
+)
