@@ -1,0 +1,9 @@
+
+import setuptools
+
+setuptools.setup(
+    name="smart-One-shot-Human-Parsing",
+    version="1.0",
+    packages=setuptools.find_packages(),
+    install_requires=['torchvision==0.3.0', 'opencv-python==4.2.0.34', 'Pillow', 'tensorboardX', 'matplotlib', 'tensorboard'],
+)
